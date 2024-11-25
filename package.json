@@ -10,12 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "bootstrap": "^5.3.3",
-    "google-protobuf": "^3.21.4",
-    "grpc-web": "^1.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^7.0.1"
+    "react-router-dom": "^7.0.1",
+    "bootstrap": "^5.3.3",
+    "@protobuf-ts/grpcweb-transport": "^2.9.4",
+    "@protobuf-ts/plugin": "^2.9.4",
+    "google-protobuf": "^3.21.4",
+    "grpc-web": "^1.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",

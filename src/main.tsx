@@ -3,16 +3,7 @@ import {createRoot} from 'react-dom/client'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 import HomePage from "./pages/HomePage/HomePage.tsx";
-
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import {CarTypeRequest, CarTypeResponse} from "./libs/CarTypeService_pb.js";
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-import {CarTypeServiceClient} from "./libs/CarTypeService_grpc_web_pb";
+import addNewCarType from "./api/addNewCarType.ts";
 
 
 const router = createBrowserRouter(
@@ -24,15 +15,8 @@ const router = createBrowserRouter(
     ]
 )
 
-
-const client = new CarTypeServiceClient('http://localhost:9090', null, null);
-
-const request = new CarTypeRequest();
-request.setValue("Личная");
-
-client.addNewCarType(request, {}, () => {})
-
-
+const response = await addNewCarType()
+console.log(response)
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
